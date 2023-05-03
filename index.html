@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My first web page for ROS!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="main.js"></script>
+  <script src="roslib.min.js"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- header of the page -->
+    <header class="header">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Hello ROS</h1>
+                <p>Let's connect our website to ROS</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center">Menu</h3>
+                            <br>
+                            <!-- <input id="puerto" type="text"/> <br> -->
+                            <button class="mt-2 btn btn-success" id="btn_con">Conectar</button>
+                            <button class="mt-2 btn btn-danger" id="btn_dis">Desconectar</button>
+                        </div>
+                    </div>
+                </div>
+		            <div class="col-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center" id="title">Main content</h2>
+                            <button class="mt-2 btn btn-primary" id="btn_move">Mover</button>
+                            <button class="mt-2 btn btn-primary" id="btn_right">Right</button>
+                            <button class="mt-2 btn btn-primary" id="btn_stop">Stop</button>
+
+                            <button class="mt-2 btn btn-primary" id="btn_delante">Delante</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <br><br><br>
+    <table>
+        <tr>
+            <th>Ibuprofeno</th>
+            <th>Paracetamol</th>
+            <th>Apiretal</th>
+            <th>Diazepan</th>
+        </tr>
+        <tr>
+            <td><button class="mt-2 btn btn-primary" id="btn_Ibuprofeno">Ibuprofeno</button></td>
+            <td><button class="mt-2 btn btn-primary" id="btn_Paracetamol">Paracetamol</button></td>
+            <td><button class="mt-2 btn btn-primary" id="btn_Apiretal">Apiretal</button></td>
+            <td><button class="mt-2 btn btn-primary" id="btn_Diazepan">Diazepan</button></td>
+        </tr>
+    </table>
+</body>
+
+</html>
