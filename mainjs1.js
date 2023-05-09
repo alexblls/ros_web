@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', event => {
-    console.log("entro en la pagina")
+    console.log("entro en la pagina si")
     
     document.getElementById("btn_con").addEventListener("click", connect)
     document.getElementById("btn_dis").addEventListener("click", disconnect)
@@ -16,24 +16,17 @@ document.addEventListener('DOMContentLoaded', event => {
     //     call_delante_service("go_ibuprofeno")
     // })
     document.getElementById("btn_Ibuprofeno").addEventListener("click", go_ibuprofeno)
-
-
-    // data = {
-    //     // ros connection
-    //     ros: null,
-    //     // rosbridge_address: 'ws://127.0.0.1:9090/",
-    //     rosbridge_address: document.getElementById("puerto").value,
-    //     connected: false,
-    // }
-
-    posiciones = [[10,10],[10,20],[20,10],[20,20]];
+    document.getElementById("btn_Paracetamol").addEventListener("click", go_paracetamol)
+    document.getElementById("btn_Apiretal").addEventListener("click", go_apiretal)
+    document.getElementById("btn_Diazepan").addEventListener("click", go_viagra)
+    document.getElementById("btn_Entregar").addEventListener("click", go_entregar)
 
     data = {
         // ros connection
         ros: null,
         rosbridge_address: 'ws://127.0.0.1:9090/',
         //rosbridge_address: document.getElementById("puerto").value,
-        connected: false,
+        connected: true,
         // service information 
         service_busy: false, 
         service_response: ''
@@ -107,41 +100,99 @@ document.addEventListener('DOMContentLoaded', event => {
     }
 
     function go_ibuprofeno() {
+        console.log("dentro de go_ibuprofeno")
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
-            messageType: 'geometry_msgs/pose'
+            messageType: 'geometry_msgs/msg/PoseStamped'
         })
         let message = new ROSLIB.Message({
             header: {
                 frame_id: "map"
             },
             pose: {
-                position: {x: 3, y: -1, z: 0},
+                position: {x: -0.1, y: 2, z: 0},
                 orientation: {x: 0, y:0 , z:0, w: 0.0}
             }
         })
         topic.publish(message)
     }
 
-//     header:
-//   stamp:
-//     sec: 0
-//     nanosec: 0
-//   frame_id: map
-// pose:
-//   position:
-//     x: 0.8944292068481445
-//     y: 2.1368610858917236
-//     z: 0.0
-//   orientation:
-//     x: 0.0
-//     y: 0.0
-//     z: 0.9999562944252877
-//     w: 0.0093492908419649
+    function go_paracetamol() {
+        console.log("dentro de go_paracetamol")
+        let topic = new ROSLIB.Topic({
+            ros: data.ros,
+            name: '/goal_pose',
+            messageType: 'geometry_msgs/msg/PoseStamped'
+        })
+        let message = new ROSLIB.Message({
+            header: {
+                frame_id: "map"
+            },
+            pose: {
+                position: {x: 2.3, y: 2, z: 0},
+                orientation: {x: 0, y:0 , z:0, w: 0.0}
+            }
+        })
+        topic.publish(message)
+    }
 
+    function go_apiretal() {
+        console.log("dentro de go_apiretal")
+        let topic = new ROSLIB.Topic({
+            ros: data.ros,
+            name: '/goal_pose',
+            messageType: 'geometry_msgs/msg/PoseStamped'
+        })
+        let message = new ROSLIB.Message({
+            header: {
+                frame_id: "map"
+            },
+            pose: {
+                position: {x: 4.2, y: 2, z: 0},
+                orientation: {x: 0, y:0 , z:0, w: 0.0}
+            }
+        })
+        topic.publish(message)
+    }
 
-
+    function go_viagra() {
+        console.log("dentro de go_viagra")
+        let topic = new ROSLIB.Topic({
+            ros: data.ros,
+            name: '/goal_pose',
+            messageType: 'geometry_msgs/msg/PoseStamped'
+        })
+        let message = new ROSLIB.Message({
+            header: {
+                frame_id: "map"
+            },
+            pose: {
+                position: {x: 7, y: -0.5, z: 0},
+                orientation: {x: 0, y:0 , z:0, w: 0.0}
+            }
+        })
+        topic.publish(message)
+    }
+    
+    function go_entregar() {
+        console.log("dentro de go_entregar")
+        let topic = new ROSLIB.Topic({
+            ros: data.ros,
+            name: '/goal_pose',
+            messageType: 'geometry_msgs/msg/PoseStamped'
+        })
+        let message = new ROSLIB.Message({
+            header: {
+                frame_id: "map"
+            },
+            pose: {
+                position: {x: -1, y: -1, z: 0},
+                orientation: {x: 0, y:0 , z:0, w: 0.0}
+            }
+        })
+        topic.publish(message)
+    }
     // define the service to be called
     let service = new ROSLIB.Service({
         ros : ros,

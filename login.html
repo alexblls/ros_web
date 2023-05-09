@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/index.css" rel="stylesheet">
+        <title>login | Farmabot</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="Logo">
+                <a href="index.html"><img src="imagenesIconos/farmabot_2_penege.png" class="logoGti"></a>
+            </div>
+            <div class="contenedorLogo">
+                <a href="login.html"><img src="imagenesIconos/femenino.png" class="logoGti"></a>
+            </div>
+        </header>    
+        </section>
+        <section id="contacto" class="">
+            <div class="contacto_form">
+                <h2 class="cn">Iniciar Sesión</h2>
+                <form class="formulario" id="contactanos_form" onsubmit="return false;">
+                    <input type="email" class="contenedorcontacta" id="email" name="correo_form" placeholder="Email*" required>
+                    <input type="password" class="contenedorcontacta" id="password" name="contrasena_form" placeholder="Contraseña*" required>
+                    <input type="submit" value="Log in" class="botoncontacto" id="botonform" onclick= "loginAction()">
+                    <div id="output_form" class="salida"></div>
+                    <a class="irRegistro" href="registro.html">¿No tienes cuenta? Registrate</a>
+                </form>
+            </div> 
+        </section>
+        <script>
+            function loginAction() {
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                if (email === "admin@gmail.com" && password === "admin") {
+                    window.location.href = "paginaPrincipal.html";
+                } else {
+                    document.getElementById("output_form").innerHTML = "Por favor, ingrese el correo electrónico y contraseña correctos";
+                }
+            }
+        </script>
+    </body>
+    </html>
