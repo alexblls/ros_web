@@ -1,0 +1,384 @@
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F4F4F4;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+aqui va el header
+ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    background-color: #F4F4F4;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.logoGti {
+    height: 80px;
+    margin: 10px;
+}
+
+/*
+aqui termina header
+ */
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+.landin {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-color: 1px solid black;
+}
+
+.landin>div {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+h1 {
+    font-size: 1.2rem;
+}
+
+
+.slogan {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #2B0124;
+    text-align: center;
+
+}
+
+.imgp {
+    width: 15%;
+}
+
+.titular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.botonInformate {
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: #F4F4F4;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 1rem 2.8rem;
+    border-radius: 400px;
+    border: 3.5px solid #2271B3;
+    background-color: #2271B3;
+    margin-top: 50px;
+
+}
+
+.registro {
+
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #2271B3;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 1rem 2.8rem;
+    border-radius: 300px;
+    border: 3.5px solid #2271B3;
+    background-color: #F4F4F4;
+    margin-top: 25px;
+}
+
+.morado {
+    color: #2271B3;
+}
+
+.slogan2 {
+    font-size: 1.5rem;
+    text-align: center;
+    height: 30px;
+}
+
+.flechabajar {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    animation: flecha-animada 1s ease-in-out infinite;
+    margin-top: 25px;
+}
+
+@keyframes flecha-animada {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.flechaBajar {
+    height: 2rem;
+}
+
+#contacto {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.contacto_form {
+    width: 80%;
+    max-width: 400px;
+    background-color: #abdefa;
+    border-radius: 2rem;
+    opacity: 100%;
+    flex-direction: column;
+    margin: auto;
+    padding: 1px;
+}
+
+.cn {
+    color: #2271B3;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.formulario {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedorcontacta {
+    text-align: initial;
+    text-decoration: none;
+    margin: 0.4rem;
+    width: 85%;
+    height: 2rem;
+    border: #2271B3 solid 1px;
+    border-radius: 5px;
+    background-color: #e4f4fd;
+    color: #2271B3;
+    font: 400 1rem Helvetica;
+    padding: 0.5rem;
+}
+
+.botoncontacto {
+
+    font-family: Helvetica;
+    color: #2271B3;
+    border: 0;
+    width: 85%;
+    height: 2.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: #2271B3 1px 1px 1px;
+    position: relative;
+    background-color: #f1f1f1;
+
+}
+
+footer {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.textofuter {
+    color: #2B0124;
+    width: 50%;
+    font-size: 0.5rem;
+}
+
+.textofuter .alvaro {
+    font-size: .3rem;
+}
+
+.rrss {
+    padding-left: 10px;
+    height: 2rem;
+}
+
+.contenedor {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.tituloh3 {
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+}
+
+.textolargo {
+    font-size: 1.5rem;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.caja {
+    width: 100%;
+    height: 70%;
+}
+
+.cajafotofoto {
+    width: max-content;
+    height: max-content;
+
+}
+
+.foto {
+
+    width: 90%;
+}
+
+.irRegistro {
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2B0124;
+}
+
+/*
+aqui empieza el css de los botones
+ */
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+ */
+.medicinas {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.textoMedicina {
+    font-size: 40px;
+    font-family: Helvetica, sans-serif;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 100px 20px 0px 20px;
+    
+}
+
+.btnRojo {
+    background-color: red;
+}
+
+.btnVerde {
+    background-color: Green;
+}
+
+.btnAzul {
+    background-color: rgb(62, 151, 224);
+}
+
+.btnAzulOscuro {
+    background-color: rgb(0, 0, 100);
+}
+
+.paracetamol {
+    padding: 12px 24px;
+    font-size: 24px;
+    font-family: Helvetica, sans-serif;
+    border: none;
+    color: #fff;
+    border-radius: 15px;
+    width: 200px;
+    height: 60px;
+    margin: 10px;
+}
+
+.paracetamol:hover {
+    background-color: #2ecc71;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/*
+aqui termina el css de los botones
+ */
+/*
+------------------------------------------------------------------------------------------------------------------------------------------
+ */
+/*
+aqui empieza el responsive
+ */
+
+@media (min-width: 1000px) {
+    .foto {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .imgp {
+        margin-top: 40px;
+        width: 35%;
+    }
+
+    .slogan2 {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .imgp {
+        width: 50%;
+    }
+
+    .slogan2 {
+        width: 100%;
+        margin-top: 60px;
+        font-size: 1.2rem;
+    }
+
+    .botonInformate {
+        width: 200px;
+        height: 25px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .textolargo {
+        font-size: 1.2rem;
+    }
+
+    .flechabajar {
+        margin-top: 40px;
+    }
+}
