@@ -296,7 +296,9 @@ aqui empieza el css de los botones
 }
 
 .btnRojo {
-    background-color: red;
+    background-color: grey;
+    pointer-events: none;
+
 }
 
 .btnVerde {
@@ -328,7 +330,21 @@ aqui empieza el css de los botones
     cursor: pointer;
     transform: scale(1.1);
 }
-
+.alerta1{
+    display: none;
+}
+.alerta2{
+    display: none;
+}
+.alerta3{
+    display: none;
+}
+.alerta4{
+    display: none;
+}
+.alerta5{
+    display: none;
+}
 /*
 aqui termina el css de los botones
  */
