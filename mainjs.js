@@ -14,6 +14,18 @@ document.addEventListener('DOMContentLoaded', event => {
     document.getElementById("btn_Apiretal").addEventListener("click", go_apiretal)
     document.getElementById("btn_Diazepan").addEventListener("click", go_viagra)
     document.getElementById("btn_Entregar").addEventListener("click", go_entregar)
+    var alerta1 = document.getElementById("alerta1");
+    var alerta2 = document.getElementById("alerta2");
+    var alerta3 = document.getElementById("alerta3");
+    var alerta4 = document.getElementById("alerta4");
+    var alerta5 = document.getElementById("alerta5");
+    var botonIbu = document.getElementById("btn_Ibuprofeno")
+    var botonPara = document.getElementById("btn_Paracetamol")
+    var botonVia = document.getElementById("btn_Diazepan")
+    var botonApi = document.getElementById("btn_Apiretal")
+    var botonEntregar = document.getElementById("btn_Entregar")
+    var botonDesconectar = document.getElementById("btn_dis")
+    var botonConcetar = document.getElementById("btn_con")
 
     data = {
         // ros connection
@@ -28,7 +40,11 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function connect(){
 	      console.log("Clic en connect")
-	
+          botonDesconectar.style.backgroundColor ="red"
+          botonDesconectar.style.pointerEvents ="auto"
+
+          botonConcetar.style.backgroundColor ="grey"
+          botonConcetar.style.pointerEvents="none"
 	      data.ros = new ROSLIB.Ros({
                 url: data.rosbridge_address
         })
@@ -49,6 +65,12 @@ document.addEventListener('DOMContentLoaded', event => {
     }
 
     function disconnect(){
+        botonDesconectar.style.backgroundColor ="grey"
+        botonDesconectar.style.pointerEvents ="none"
+
+        botonConcetar.style.backgroundColor ="green"
+        botonConcetar.style.pointerEvents="auto"
+
 	      data.ros.close()        
 	      data.connected = false
         console.log('Clic en botón de desconexión')
@@ -95,6 +117,19 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function go_ibuprofeno() {
         console.log("dentro de go_ibuprofeno")
+        //display de las alertas
+        alerta1.style.display = "block"
+        alerta2.style.display = "none"
+        alerta3.style.display = "none"
+        alerta4.style.display = "none"
+        alerta5.style.display = "none"
+        //habilitar y deshabilitar botones
+        botonVia.style.pointerEvents = "none"
+        botonVia.style.backgroundColor ="grey"
+        botonApi.style.pointerEvents = "none"
+        botonApi.style.backgroundColor ="grey"
+        botonPara.style.pointerEvents = "none"
+        botonPara.style.backgroundColor ="grey"
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
@@ -114,6 +149,19 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function go_paracetamol() {
         console.log("dentro de go_paracetamol")
+        //display de las alertas
+        alerta1.style.display = "none"
+        alerta2.style.display = "block"
+        alerta3.style.display = "none"
+        alerta4.style.display = "none"
+        alerta5.style.display = "none"
+        //habilitar y deshabilitar botones
+        botonIbu.style.pointerEvents = "none"
+        botonIbu.style.backgroundColor ="grey"
+        botonApi.style.pointerEvents = "none"
+        botonApi.style.backgroundColor ="grey"
+        botonVia.style.pointerEvents = "none"
+        botonVia.style.backgroundColor ="grey"
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
@@ -133,6 +181,19 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function go_apiretal() {
         console.log("dentro de go_apiretal")
+        //display de las alertas
+        alerta1.style.display = "none"
+        alerta2.style.display = "none"
+        alerta3.style.display = "block"
+        alerta4.style.display = "none"
+        alerta5.style.display = "none"
+        //habilitar y deshabilitar botones
+        botonIbu.style.pointerEvents = "none"
+        botonIbu.style.backgroundColor ="grey"
+        botonVia.style.pointerEvents = "none"
+        botonVia.style.backgroundColor ="grey"
+        botonPara.style.pointerEvents = "none"
+        botonPara.style.backgroundColor ="grey"
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
@@ -152,6 +213,19 @@ document.addEventListener('DOMContentLoaded', event => {
 
     function go_viagra() {
         console.log("dentro de go_viagra")
+        //display de las alertas
+        alerta1.style.display = "none"
+        alerta2.style.display = "none"
+        alerta3.style.display = "none"
+        alerta4.style.display = "block"
+        alerta5.style.display = "none"
+        //habilitar y deshabilitar botones
+        botonIbu.style.pointerEvents = "none"
+        botonIbu.style.backgroundColor ="grey"
+        botonApi.style.pointerEvents = "none"
+        botonApi.style.backgroundColor ="grey"
+        botonPara.style.pointerEvents = "none"
+        botonPara.style.backgroundColor ="grey"
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
@@ -171,6 +245,22 @@ document.addEventListener('DOMContentLoaded', event => {
     
     function go_entregar() {
         console.log("dentro de go_entregar")
+                //display de las alertas
+        alerta1.style.display = "none"
+        alerta2.style.display = "none"
+        alerta3.style.display = "none"
+        alerta4.style.display = "none"
+        alerta5.style.display = "block"
+
+        botonIbu.style.pointerEvents = "auto"
+        botonIbu.style.backgroundColor ="rgb(62, 151, 224)"
+
+        botonApi.style.pointerEvents="auto"
+        botonApi.style.backgroundColor ="rgb(62,151,224)"
+        botonPara.style.pointerEvents = "auto"
+        botonPara.style.backgroundColor ="rgb(62, 151, 224)"
+        botonVia.style.pointerEvents = "auto"
+        botonVia.style.backgroundColor ="rgb(62, 151, 224)"
         let topic = new ROSLIB.Topic({
             ros: data.ros,
             name: '/goal_pose',
